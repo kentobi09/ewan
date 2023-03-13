@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+button{
+    height: 300px;
+    width: 300px;
+    margin: 20%;
+    border-radius: 50%;
+    
+}
+<?php
+$r1 = rand(1,255);
+$r2 = rand(1,255);
+$r3 = rand(1,255);
+$r4 = rand(1,40)."px";
+
+$a1 = rand(1,255);
+$a2= rand(1,255);
+$a3 = rand(1,255);
+if(isset($_GET['col'])){
+$x = <<<TEXT
+button{
+    background-color:rgb($r1,$r2, $r3);
+    font-size:$r4;
+    color:rgb($a1,$a2,$a3);
+}
+TEXT;
+
+echo $x;
+}
+?>
+ 
+
+</style>
+<body>
+    
+<form method="get">
+<button name="col"> Change Color</button>
+</form>
+</body>
+</html>
